@@ -1,3 +1,16 @@
+//change .env to your database
+DB_HOST=localhost
+DB_DATABASE=your_db_name
+DB_USERNAME=username
+DB_PASSWORD=password
+
+php artisan migrate
+
+//install package Illuminate/HTML
+composer require "illuminate/html":"5.0.*"
+
+
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)

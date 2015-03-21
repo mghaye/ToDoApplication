@@ -52,8 +52,23 @@
 			</div>
 		</div>
 	</nav>
+	<div class="container">
+		@if (Session::has('message'))
+    		<div class="flash alert-info">
+    			<p>{{ Session::get('message') }}</p>
+    		</div>
+    	@endif
+    	@if ($errors->any())
+        		<div class='flash alert-danger'>
+        			@foreach ( $errors->all() as $error )
+        				<p>{{ $error }}</p>
+        			@endforeach
+        		</div>
+        	@endif
+		@yield('content')
 
-	@yield('content')
+	</div>
+
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
