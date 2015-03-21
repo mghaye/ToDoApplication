@@ -7,6 +7,7 @@ DB_PASSWORD=password
 php artisan migrate
 
 //install package Illuminate/HTML
+
 composer require "illuminate/html":"5.0.*"
 
 
