@@ -1,8 +1,8 @@
 //change .env to your database
-## DB_HOST=localhost
-## DB_DATABASE=your_db_name
-## DB_USERNAME=username
-## DB_PASSWORD=password
+* DB_HOST=localhost
+* DB_DATABASE=your_db_name
+* DB_USERNAME=username
+* DB_PASSWORD=password
 
 php artisan migrate
 
