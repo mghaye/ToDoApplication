@@ -8,15 +8,15 @@ class TasksTableSeeder extends Seeder {
         DB::table('tasks')->delete();
 
         $tasks = array(
-            ['name' => 'Basic Todo', 'completed' => true, 'description' => 'Een basic todo maken met laravel',
+            ['user_id'=>1,'name' => 'Basic Todo', 'completed' => true, 'description' => 'Een basic todo maken met laravel',
                 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['name' => 'Login', 'completed' => false, 'description' => 'Een login maken voor de todo',
+            ['user_id'=>1,'name' => 'Login', 'completed' => false, 'description' => 'Een login maken voor de todo',
                 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['name' => 'Gebruikersbeheer', 'completed' => false, 'description' => 'Gebruikersbeheer toevoegen aan todo',
+            ['user_id'=>1,'name' => 'Gebruikersbeheer', 'completed' => false, 'description' => 'Gebruikersbeheer toevoegen aan todo',
                 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['name' => 'Rollen', 'completed' => false, 'description' => 'Verschillende rollen toekennen aan gebruikers',
+            ['user_id'=>1,'name' => 'Rollen', 'completed' => false, 'description' => 'Verschillende rollen toekennen aan gebruikers',
                 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['name' => 'sharing', 'completed' => false, 'description' => 'verschillende users kunnen een todo delen',
+            ['user_id'=>1,'name' => 'sharing', 'completed' => false, 'description' => 'verschillende users kunnen een todo delen',
                 'created_at' => new DateTime, 'updated_at' => new DateTime],
 
         );

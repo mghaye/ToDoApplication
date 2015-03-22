@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Input;
 use Redirect;
 
@@ -28,7 +29,8 @@ class TasksController extends Controller {
 	 */
 	public function index()
 	{
-		$tasks=Task::all();
+		$tasks=Auth::user()->Tasks;
+		//return $tasks;
 		return view('tasks.index',compact('tasks'));
 	}
 
@@ -52,6 +54,8 @@ class TasksController extends Controller {
 		$this->validate($request, $this->rules);
 
 		$input = Input::all();
+
+
 		Task::create( $input );
 
 		return Redirect::route('tasks.index')->with('message', 'Task created');
@@ -105,6 +109,12 @@ class TasksController extends Controller {
 		$task->delete();
 
 		return Redirect::route('tasks.index')->with('message', 'Todo deleted.');
+	}
+	public function returnJson()
+	{
+		$tasks=a(Task::all());
+
+		return $tasks;
 	}
 
 }

@@ -4,6 +4,7 @@
     <h2>Edit Todo</h2>
 
         {!! Form::model($task, ['method' => 'PATCH', 'route' => ['tasks.update', $task->id]]) !!}
+            {!!Form::hidden('user_id',Auth::user()->id)!!}
             <div class="form-group">
                 {!! Form::label('name', 'Name:') !!}
                 {!! Form::text('name') !!}

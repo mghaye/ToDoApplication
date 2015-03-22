@@ -15,6 +15,8 @@
 
 Route::get('/', 'TasksController@index');
 
+Route::get('/tasks/returnJson','TasksController@returnJson');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
