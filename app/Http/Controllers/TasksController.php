@@ -9,6 +9,13 @@ use Input;
 use Redirect;
 
 class TasksController extends Controller {
+
+	//zorgt ervoor dat de user moet ingelogd zijn om de views van taskscontroller te zien
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
 	protected $rules = [
 		'name' => ['required', 'min:3']
 

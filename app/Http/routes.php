@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
 
-//Route::get('home', 'HomeController@index');
+
+Route::get('/', 'TasksController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -26,9 +26,7 @@ Route::bind('tasks',function($value,$route){
 	return App\Task::whereId($value)->first();
 });
 
-Route::get('tasks', ['middleware' => 'auth.basic', function()
-{
-	// Only authenticated users may enter...
-}]);
+
+
 
 
