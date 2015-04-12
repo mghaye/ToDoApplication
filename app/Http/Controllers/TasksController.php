@@ -112,7 +112,7 @@ class TasksController extends Controller {
 	}
 	public function returnJson()
 	{
-		$tasks=a(Task::all());
+		$tasks=(Task::all());
 
 		return $tasks;
 	}

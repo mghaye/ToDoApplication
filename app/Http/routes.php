@@ -28,6 +28,13 @@ Route::bind('tasks',function($value,$route){
 	return App\Task::whereId($value)->first();
 });
 
+Route::group(['prefix'=>'admin',
+              'namespace'=>'admin',
+              'middleware'=>'admin'
+            ],function(){
+    Route::resource('user','UserController');
+});
+
 
 
 
