@@ -4,7 +4,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use App\Task;
 use Illuminate\Http\Request;
+use Redirect;
 
 class UserController extends Controller {
 
@@ -16,7 +18,8 @@ class UserController extends Controller {
 	public function index()
 	{
 		$users=User::orderBy('created_at','desc')->get();
-        return view('admin.user.index',compact('users'));
+        $tasks=Task::all();
+        return view('admin.user.index',compact('users','tasks'));
 	}
 
 	/**
@@ -80,7 +83,10 @@ class UserController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        $user=User::find($id);
+        $user->delete();
+
+        return Redirect::route('admin.user.index');
 	}
 
 }

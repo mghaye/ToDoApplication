@@ -32,6 +32,13 @@
         @endif
         <p>
             {!! link_to_route('tasks.create', 'Create Todo') !!}
+
         </p>
+        @if(Auth::user()->is_admin ==true)
+        <p>
+            {!! link_to_route('admin.user.index', 'Gebruikersbeheer') !!}
+
+        </p>
+        @endif
 
 @endsection
